@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Real para Dollar</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header>
+    <div>
+        <h1>Converta Reais em Dollar!</h1>
+    </div>
+</header>
+
+
+    <div class="digite">
+    <h2>Digite aqui o valor em Reais!</h2>
+    </div>
+
+
+    <form action="/calcular_dollar" method="POST">
+        <div class="input">
+            <label for="real">Reais:</label>
+            <input type="number" id="real" name="real" step="0.01" required>
+        </div>
+        <button type="submit">Converter</button>
+    </form>
+
+    {% if dollar is defined %}
+    <div class="resultado">
+        <h3>Valor em Dollar: ${{ "%.2f"|format(dollar) }}</h3>
+    </div>
+    {% endif %}
+</body>
+</html>
